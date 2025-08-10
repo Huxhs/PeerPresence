@@ -29,6 +29,9 @@ const userSchema = new mongoose.Schema({
     type: [String], // Used for tutors listing their subjects
     default: [],
   },
+  avatarUrl: { type: String, default: '' },
+  savedPosts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Post', default: [] }],
 }, { timestamps: true });
+
 
 module.exports = mongoose.model('User', userSchema);
