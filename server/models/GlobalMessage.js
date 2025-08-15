@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 
 const globalMessageSchema = new mongoose.Schema(
   {
-    sender: { type: String, required: true },     // e.g. "nick (student)"
-    text: { type: String, required: true },       // message body
-    timestamp: { type: String, default: '' }      // optional display time
+    sender: { type: String, required: true },
+    text: { type: String, required: true },
+    timestamp: { type: String, default: '' }
   },
-  { timestamps: true } // adds createdAt which we also use on the client
+  { timestamps: true }
 );
 
 module.exports = mongoose.model('GlobalMessage', globalMessageSchema);

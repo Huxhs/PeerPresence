@@ -16,4 +16,5 @@ module.exports = async function protect(req, res, next) {
   } catch (e) {
     return res.status(401).json({ message: 'Unauthorized' });
   }
+  
 };

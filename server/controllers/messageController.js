@@ -1,8 +1,7 @@
 // server/controllers/messageController.js
-const Message = require('../models/Message');         // make sure this model exists
-const Conversation = require('../models/Conversation'); // we created this earlier
+const Message = require('../models/Message');
+const Conversation = require('../models/Conversation');
 
-// POST /api/messages  -> create a DM and upsert the conversation's last activity
 exports.createMessage = async (req, res) => {
   try {
     const { conversationId, sender, recipient, content } = req.body;
@@ -16,7 +15,6 @@ exports.createMessage = async (req, res) => {
       convo = await Conversation.findById(conversationId);
       if (!convo) return res.status(404).json({ message: 'Conversation not found' });
     } else {
-      // find-or-create one-to-one conversation
       convo = await Conversation.findOne({
         participants: { $all: [sender, recipient], $size: 2 },
       });
@@ -32,7 +30,6 @@ exports.createMessage = async (req, res) => {
       content,
     });
 
-    // bump convo updatedAt
     await Conversation.findByIdAndUpdate(convo._id, { $set: { updatedAt: new Date() } });
 
     res.status(201).json(msg);
@@ -42,7 +39,6 @@ exports.createMessage = async (req, res) => {
   }
 };
 
-// GET /api/messages/:conversationId  -> fetch messages in a convo (newest last)
 exports.getConversationMessages = async (req, res) => {
   try {
     const { conversationId } = req.params;
