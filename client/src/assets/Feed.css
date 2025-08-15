@@ -1,0 +1,30 @@
+.feed-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+@media (min-width: 1000px){
+  .feed-grid{ grid-template-columns: 1fr 1fr; }
+}
+
+.post-card{ overflow: hidden; padding: 0; }
+.post-media img{
+  width: 100%; height: 240px; object-fit: cover; display: block;
+}
+.post-body{ padding: 16px 18px; }
+.post-title{ margin: 0 0 6px 0; font-size: 1.1rem; }
+.post-desc{ margin: 0; color: #4b5563; }
+
+.post-actions{
+  margin-top: 12px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+
+.vote{ display: inline-flex; align-items: center; gap: 10px; }
+.vote-btn{
+  width: 34px; height: 34px; border-radius: 10px; border: 1px solid rgba(17,24,39,.12);
+  background: #fff; cursor: pointer; font-weight: 700;
+}
+.vote-btn.active.up{ background: #e7f6ea; border-color: #a7d3ad; }
+.vote-btn.active.down{ background: #fdeceb; border-color: #f2b3b0; }
+.score{ min-width: 24px; text-align: center; font-weight: 700; }

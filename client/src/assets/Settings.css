@@ -1,0 +1,156 @@
+/* ========== Settings Page ========== */
+:root{
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --ink: #1e2430;
+  --muted: #6b7280;
+  --brand: #2f7d32;
+  --brand-600: #2a6f2d;
+  --brand-700: #255f27;
+  --danger: #e03131;
+  --ring: rgba(47,125,50,0.25);
+  --ring-danger: rgba(224,49,49,0.25);
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
+  --border: 1px solid rgba(17,24,39,.08);
+}
+
+/* layout helpers already used in your JSX */
+.mt-8  { margin-top: .75rem; }
+.mt-12 { margin-top: 1rem; }
+.mt-16 { margin-top: 1.25rem; }
+
+/* Cards */
+.card{
+  background: var(--card);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px 22px;
+}
+
+.card > h3,
+.card > h4{
+  margin: 0;
+  color: var(--ink);
+  letter-spacing: .2px;
+}
+
+/* Grid & stacks */
+.grid-2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.stack > * + *{ margin-top: 12px; }
+
+@media (max-width: 900px){
+  .grid-2{ grid-template-columns: 1fr; }
+}
+
+/* Labels & inputs */
+.label{
+  display: block;
+  font-size: .88rem;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.input{
+  width: 100%;
+  background: #fff;
+  border: 1px solid rgba(17,24,39,.12);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: .95rem;
+  color: var(--ink);
+  transition: box-shadow .2s ease, border-color .2s ease, transform .05s ease;
+}
+
+.input:focus{
+  outline: none;
+  border-color: var(--brand-600);
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+textarea.input{
+  resize: vertical;
+  min-height: 110px;
+}
+
+/* Buttons */
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 600;
+  font-size: .95rem;
+  border: 1px solid transparent;
+  background: #eef2f6;
+  color: var(--ink);
+  cursor: pointer;
+  transition: transform .05s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+}
+
+.btn:hover{ box-shadow: 0 6px 16px rgba(17,24,39,.08); }
+.btn:active{ transform: translateY(1px); }
+
+.btn-primary{
+  background: var(--brand);
+  color: #fff;
+}
+.btn-primary:hover{ background: var(--brand-600); }
+.btn-primary:active{ background: var(--brand-700); }
+
+.btn-danger{
+  background: var(--danger);
+  color: #fff;
+}
+.btn-danger:hover{ box-shadow: 0 0 0 4px var(--ring-danger); }
+
+/* Info / muted */
+.info{
+  background: #effaf1;
+  border: 1px solid rgba(47,125,50,.25);
+  color: #1d5f22;
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+.muted{ color: var(--muted); }
+
+/* Tiny niceties */
+.card .input::placeholder{ color: #9aa3af; }
+
+/* optional avatar preview block if you later add an <img/> */
+.settings-avatar{
+  display: flex; align-items: center; gap: 14px;
+}
+.settings-avatar img{
+  width: 56px; height: 56px; border-radius: 50%;
+  object-fit: cover; border: var(--border);
+  box-shadow: 0 4px 12px rgba(17,24,39,.06);
+}
+/* optional avatar preview block */
+.settings-avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.settings-avatar img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: var(--border);
+  box-shadow: 0 4px 12px rgba(17, 24, 39, .06);
+}
+
+.settings-avatar small {
+  color: var(--muted);
+  font-size: 0.8rem;
+}

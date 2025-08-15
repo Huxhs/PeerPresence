@@ -1,0 +1,162 @@
+/* ===== Checkout & Success ===== */
+:root{
+  --pp-bg:#f6f7fb;
+  --pp-card:#fff;
+  --pp-line:#e8ecf3;
+  --pp-text:#0f172a;
+  --pp-muted:#6b7280;
+  --pp-brand:#2563eb;
+  --pp-green:#16a34a;
+  --pp-green-600:#15803d;
+}
+
+.co-wrap{
+  padding: 24px;
+}
+
+.co-header{
+  display:flex;
+  gap: 24px;
+  align-items: stretch;
+  margin-bottom: 24px;
+}
+
+/* Brand header */
+.co-brand{ 
+  flex: 1;
+  display:flex; align-items:center; gap:12px;
+  background: var(--pp-card);
+  border:1px solid var(--pp-line); border-radius: 14px;
+  padding: 16px 18px;
+}
+.co-brand-logo{ font-size: 24px; }
+.co-brand-name{ font-weight:800; font-size:18px; }
+.co-invoice-line{ color:var(--pp-muted); font-size:12px; }
+
+/* Tutor badge */
+.co-tutor{
+  flex: 1.2;
+}
+.co-card{
+  background: var(--pp-card);
+  border:1px solid var(--pp-line);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 1px 2px rgba(16,24,40,.06);
+}
+.co-tutor-top{
+  display:flex; align-items:center; gap:14px;
+}
+.co-tutor-top img{
+  width:64px; height:64px; border-radius:12px; object-fit:cover;
+}
+.co-tutor-name{ font-weight:800; font-size:18px; }
+.co-tutor-line{ color:var(--pp-muted); font-size:13px; }
+.co-tutor-when{ color:var(--pp-muted); font-size:12px; }
+.ml-auto{ margin-left:auto; }
+
+/* Grid: roomy with bigger gaps */
+.co-grid{
+  display:grid;
+  grid-template-columns: 1fr 380px;
+  gap: 24px;
+}
+.co-col{ display:flex; flex-direction:column; gap:24px; }
+
+.co-card-title{
+  font-weight:800; margin-bottom:12px;
+}
+
+/* Payment methods */
+.co-methods{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom: 14px; }
+.pill{
+  border:1px solid var(--pp-line);
+  background:#f9fafb;
+  padding:8px 12px; border-radius:999px; font-weight:700; font-size:13px;
+  cursor:pointer;
+}
+.pill.active{ background:#eef2ff; border-color:#dbe2ff; color:#334155; }
+
+/* Inputs */
+.co-label{ display:block; font-size:12px; color:var(--pp-muted); margin-bottom:6px; }
+.co-input{
+  width:100%; height:40px; border:1px solid var(--pp-line); border-radius:10px;
+  padding: 8px 10px; outline:none; font-size:14px;
+}
+.co-input:focus{ border-color:#c7d2fe; box-shadow:0 0 0 4px rgba(37,99,235,.12); }
+
+.co-2col{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+.co-3col{ display:grid; grid-template-columns: 1fr 1fr 1fr; gap:12px; }
+
+.co-apply{ display:flex; gap:10px; margin-top: 12px; }
+
+/* Summary */
+.co-summary .co-row{
+  display:flex; justify-content:space-between; align-items:center;
+  padding: 6px 0;
+}
+.co-summary .co-total{ font-size:16px; }
+.co-divider{ height:1px; background:var(--pp-line); margin:8px 0; }
+
+.co-mini{ display:flex; flex-direction:column; gap:12px; }
+.co-mini-head{ display:flex; gap:12px; align-items:center; }
+.co-mini-head img{ width:48px; height:48px; border-radius:10px; object-fit:cover; }
+.co-mini-name{ font-weight:800; }
+.co-mini-sub{ font-size:12px; color:var(--pp-muted); }
+.co-mini-times{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.co-k{ font-size:12px; color:var(--pp-muted); }
+.co-v{ font-size:13px; }
+
+/* Buttons — consistent colors */
+.btn{
+  border:1px solid var(--pp-line);
+  background:#ffffff; color:var(--pp-text);
+  border-radius:12px; padding:10px 14px; font-weight:800; cursor:pointer;
+}
+.btn:hover{ background:#f3f4f6; }
+.btn-sm{ padding:8px 12px; font-size:13px; border-radius:10px; }
+.btn-lg{ padding:12px 16px; font-size:16px; }
+
+.btn-primary{
+  background: var(--pp-green);
+  border-color: var(--pp-green);
+  color:#fff;
+}
+.btn-primary:hover{ background: var(--pp-green-600); border-color: var(--pp-green-600); }
+
+.btn-outline{
+  background:#fff;
+  border-color:#cbd5e1; color:#0f172a;
+}
+.btn-outline:hover{ background:#f8fafc; }
+
+.btn-light{
+  background:#f8fafc;
+  border-color:#e2e8f0;
+}
+.btn-light:hover{ background:#f1f5f9; }
+
+.mt-8{ margin-top:8px; }
+.mt-16{ margin-top:16px; }
+
+/* Microcopy */
+.co-micro{ color:var(--pp-muted); font-size:12px; line-height:1.45; }
+.co-micro.center{ text-align:center; }
+
+/* Success */
+.co-success-wrap{ max-width: 920px; margin: 0 auto; }
+.co-badge{
+  display:inline-block; background:#ecfdf5; color:#10b981;
+  border:1px solid #a7f3d0; padding:6px 10px; border-radius:999px; font-weight:800; font-size:12px;
+  margin-bottom: 8px;
+}
+.co-h2{ font-size:22px; font-weight:800; margin: 4px 0 8px; }
+
+.co-grid.success{
+  grid-template-columns: 1fr 1fr;
+}
+
+.co-actions{ display:flex; gap:10px; }
+
+/* Empty state */
+.co-empty{ text-align:center; padding: 48px 0; }
